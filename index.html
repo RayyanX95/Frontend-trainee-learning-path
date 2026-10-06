@@ -1,0 +1,452 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Frontend Trainee Path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a route line runs down the page; each phase is a stretch of the route, each week is a station on it. */
+:root {
+  --bg: #f1f4f6;
+  --surface: #ffffff;
+  --fg: #16212a;
+  --muted: #55646f;
+  --line: #d3dbe1;
+  --p1: #0b7a75;
+  --p2: #9c5a08;
+  --p3: #2f57a8;
+  --p4: #a8386a;
+  --p5: #6b46b0;
+  --focus: #2f57a8;
+  --display: "Bricolage Grotesque", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", "IBM Plex Sans Arabic", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1920;
+    --surface: #16252e;
+    --fg: #e6edf1;
+    --muted: #9badb8;
+    --line: #2a3a45;
+    --p1: #3fc2bb;
+    --p2: #e3a04a;
+    --p3: #86a9f0;
+    --p4: #e57fa9;
+    --p5: #b49cf0;
+    --focus: #86a9f0;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1920;
+  --surface: #16252e;
+  --fg: #e6edf1;
+  --muted: #9badb8;
+  --line: #2a3a45;
+  --p1: #3fc2bb;
+  --p2: #e3a04a;
+  --p3: #86a9f0;
+  --p4: #e57fa9;
+    --p5: #b49cf0;
+  --focus: #86a9f0;
+  color-scheme: dark;
+}
+html[lang="ar"] {
+  --display: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --body: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --mono: "IBM Plex Sans Arabic", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.wrap {
+  max-width: 62rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  padding-block: 1.5rem 3rem;
+}
+a { color: inherit; text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+
+.top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; }
+.eyebrow { font-family: var(--mono); font-size: 0.8125rem; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+html[lang="ar"] .eyebrow { text-transform: none; letter-spacing: 0; font-size: 0.9rem; }
+.lang { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); padding: 3px; gap: 3px; }
+.lang button {
+  font: inherit; font-size: 0.9rem; font-weight: 500; color: var(--muted);
+  background: transparent; border: 0; border-radius: 5px; padding: 0.3rem 0.85rem; cursor: pointer;
+}
+.lang button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+
+h1 {
+  font-family: var(--display); font-weight: 700; font-size: clamp(2rem, 5.5vw, 3.25rem);
+  line-height: 1.12; letter-spacing: -0.02em; margin: 1.25rem 0 0.5rem; text-wrap: balance; max-width: 22ch;
+}
+html[lang="ar"] h1 { letter-spacing: 0; line-height: 1.3; max-width: 28ch; }
+.sub { font-size: 1.125rem; color: var(--muted); margin: 0; max-width: 44rem; text-wrap: pretty; }
+
+.stats { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; margin: 1.5rem 0 0; padding: 0.9rem 0; border-block: 1px solid var(--line); }
+.stat { display: flex; align-items: baseline; gap: 0.5rem; min-width: 0; }
+.stat dd { margin: 0; font-family: var(--display); font-weight: 700; font-size: 1.5rem; font-variant-numeric: tabular-nums; }
+.stat dt { color: var(--muted); font-size: 0.9375rem; }
+
+.rhythm { margin: 1rem 0 0; max-width: 46rem; color: var(--fg); text-wrap: pretty; }
+
+.progress { margin: 1.25rem 0 2rem; }
+.progress p { margin: 0 0 0.4rem; font-size: 0.9375rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.track { container-type: inline-size; height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; }
+.fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--p1) 0 7.14%, var(--p2) 7.14% 21.43%, var(--p3) 21.43% 50%, var(--p4) 50% 85.71%, var(--p5) 85.71% 100%); background-size: 100cqw 100%; transition: width 0.3s ease; }
+html[dir="rtl"] .fill { background: linear-gradient(270deg, var(--p1) 0 7.14%, var(--p2) 7.14% 21.43%, var(--p3) 21.43% 50%, var(--p4) 50% 85.71%, var(--p5) 85.71% 100%); background-size: 100cqw 100%; background-position: right; }
+
+.phase { --p: var(--p1); margin-block-end: 2.5rem; }
+.phase[data-phase="2"] { --p: var(--p2); }
+.phase[data-phase="3"] { --p: var(--p3); }
+.phase[data-phase="4"] { --p: var(--p4); }
+.phase[data-phase="5"] { --p: var(--p5); }
+
+.phase-head {
+  background: color-mix(in srgb, var(--p) 10%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--p) 35%, var(--line));
+  border-radius: 10px; padding: 1.1rem 1.25rem;
+}
+.phase-tag { font-family: var(--mono); font-size: 0.8125rem; font-weight: 500; color: var(--p); text-transform: uppercase; letter-spacing: 0.08em; margin: 0; }
+html[lang="ar"] .phase-tag { text-transform: none; letter-spacing: 0; font-size: 0.9375rem; font-weight: 600; }
+.phase-head h2 { font-family: var(--display); font-size: clamp(1.5rem, 3.5vw, 2rem); font-weight: 700; margin: 0.15rem 0 0.5rem; line-height: 1.2; letter-spacing: -0.01em; }
+html[lang="ar"] .phase-head h2 { letter-spacing: 0; }
+.phase-meta { display: grid; gap: 0.35rem; margin: 0; font-size: 0.9375rem; }
+.phase-meta div { display: flex; flex-wrap: wrap; gap: 0.25rem 0.6rem; min-width: 0; }
+.phase-meta dt { color: var(--muted); font-weight: 600; flex: none; }
+.phase-meta dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.phase-meta a { font-weight: 600; }
+
+.weeks { list-style: none; margin: 1rem 0 0; padding: 0; padding-inline-start: 2.25rem; position: relative; }
+.weeks::before { content: ""; position: absolute; inset-block: 0.5rem 0.5rem; inset-inline-start: 0.6rem; width: 3px; background: var(--p); border-radius: 2px; }
+.week { position: relative; padding-block-end: 1rem; }
+.week:last-child { padding-block-end: 0; }
+.week::before {
+  content: ""; position: absolute; inset-inline-start: calc(-2.2rem + 1.5px); top: 1.05rem;
+  width: 1.1rem; height: 1.1rem; border-radius: 50%; background: var(--surface); border: 3px solid var(--p);
+}
+.week.is-done::before { background: var(--p); }
+
+.wk { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 0.85rem 1rem 1rem; }
+.wk-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.9rem; }
+.wk-num { font-family: var(--mono); font-weight: 500; font-size: 0.8125rem; color: var(--p); text-transform: uppercase; letter-spacing: 0.08em; font-variant-numeric: tabular-nums; }
+html[lang="ar"] .wk-num { text-transform: none; letter-spacing: 0; font-size: 0.9375rem; font-weight: 600; }
+.wk-head h3 { font-family: var(--display); font-weight: 700; font-size: 1.1875rem; margin: 0; line-height: 1.3; flex: 1 1 12rem; min-width: 0; }
+html[lang="ar"] .wk-head h3 { font-weight: 600; }
+.done { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.875rem; color: var(--muted); cursor: pointer; margin-inline-start: auto; }
+.done input { width: 1.1rem; height: 1.1rem; accent-color: var(--p); cursor: pointer; margin: 0; }
+
+.wk-body { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 1.25rem; margin-top: 0.6rem; }
+.wk-body > div { min-width: 0; }
+.wk-body h4 { margin: 0 0 0.15rem; font-size: 0.75rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+html[lang="ar"] .wk-body h4 { text-transform: none; letter-spacing: 0; font-size: 0.875rem; }
+.wk-body p { margin: 0; font-size: 0.9688rem; text-wrap: pretty; }
+.wk-deliver { background: color-mix(in srgb, var(--p) 9%, var(--surface)); border-radius: 6px; padding: 0.55rem 0.75rem; }
+.wk-deliver h4 { color: var(--p); }
+@media (max-width: 40rem) {
+  .wk-body { grid-template-columns: 1fr; }
+  .weeks { padding-inline-start: 1.9rem; }
+  .week::before { inset-inline-start: calc(-1.85rem + 1.5px); }
+}
+
+.later, .rules { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1.1rem 1.25rem; margin-block-start: 1.25rem; }
+.later h2, .rules h2 { font-family: var(--display); font-size: 1.375rem; margin: 0 0 0.6rem; }
+.later ol, .rules ul { margin: 0; padding-inline-start: 1.25rem; display: grid; gap: 0.4rem; }
+.later li span { color: var(--muted); }
+.lists { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.25rem; align-items: start; }
+@media (max-width: 40rem) { .lists { grid-template-columns: 1fr; } }
+
+.caps { margin-block-start: 1.25rem; }
+.caps h2 { font-family: var(--display); font-size: 1.375rem; margin: 0 0 0.75rem; }
+.caps ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.caps li { min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.25rem; }
+.caps h3 { font-family: var(--display); font-size: 1.1875rem; margin: 0 0 0.35rem; line-height: 1.3; }
+.caps p { margin: 0 0 0.7rem; text-wrap: pretty; }
+.caps dl { margin: 0; display: grid; gap: 0.35rem; font-size: 0.9375rem; }
+.caps dl div { display: flex; flex-wrap: wrap; gap: 0.25rem 0.6rem; min-width: 0; }
+.caps dt { color: var(--muted); font-weight: 600; flex: none; }
+.caps dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 40rem) { .caps ul { grid-template-columns: 1fr; } }
+
+.foot { margin-block-start: 2.5rem; padding-block-start: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9375rem; }
+.foot p { margin: 0; }
+.foot strong { color: var(--fg); font-weight: 600; }
+.foot a { font-weight: 500; }
+
+@media (prefers-reduced-motion: reduce) { .fill { transition: none; } }
+</style>
+
+<main class="wrap">
+  <div class="top">
+    <span class="eyebrow" id="eyebrow"></span>
+    <div class="lang" role="group" aria-label="Language / اللغة">
+      <button type="button" id="btn-en" data-lang="en">English</button>
+      <button type="button" id="btn-ar" data-lang="ar">العربية</button>
+    </div>
+  </div>
+  <div id="app"></div>
+  <footer class="foot" id="foot"></footer>
+</main>
+
+<script>
+(function () {
+  var COURSES = {
+    1: [
+      { name: "Git & GitHub for Beginners: The Complete Hands On Course", url: "https://innovationteam.udemy.com/course/git-github-for-beginners-the-complete-hands-on-course/" }
+    ],
+    2: [
+      { name: "Build Responsive Real-World Websites with HTML and CSS", url: "https://innovationteam.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3/" }
+    ],
+    3: [
+      { name: "The Complete JavaScript Course 2025: From Zero to Expert!", url: "https://innovationteam.udemy.com/course/the-complete-javascript-course/" }
+    ],
+    4: [
+      { name: "The Ultimate React Course 2025: React, Next.js, Redux & More", url: "https://innovationteam.udemy.com/course/the-ultimate-react-course/" },
+      { name: "React & TypeScript - The Practical Guide", url: "https://innovationteam.udemy.com/course/react-typescript-the-practical-guide/" }
+    ],
+    5: []
+  };
+
+  var PHASES = [
+    { id: 1, from: 1, to: 1,
+      en: { name: "Git and GitHub", meta: "About 3 hours 20 minutes of course video, the rest daily practice on real repositories", skip: "Rebase and the comparison of branching strategies (GitHub Flow is enough)" },
+      ar: { name: "Git وGitHub", meta: "نحو 3 ساعات و20 دقيقة من فيديو الدورة، والباقي تطبيق يومي على مستودعات حقيقية", skip: "الـ rebase ومقارنة استراتيجيات التفرّع (يكفي GitHub Flow)" } },
+    { id: 2, from: 2, to: 3,
+      en: { name: "HTML & CSS", meta: "About 37.5 hours of course video, the rest building and practice", skip: "Optional design theory sections and bonus lectures" },
+      ar: { name: "HTML و CSS", meta: "نحو 37.5 ساعة من فيديو الدورة، والباقي بناء وتطبيق عملي", skip: "أقسام نظرية التصميم الاختيارية والمحاضرات الإضافية" } },
+    { id: 3, from: 4, to: 7,
+      en: { name: "JavaScript", meta: "About 71 hours of course video, the rest building and practice", skip: "The HTML & CSS crash course inside the JavaScript course, and the bonus sections" },
+      ar: { name: "JavaScript", meta: "نحو 71 ساعة من فيديو الدورة، والباقي بناء وتطبيق عملي", skip: "كراش كورس HTML و CSS داخل دورة JavaScript والأقسام الإضافية" } },
+    { id: 4, from: 8, to: 12,
+      en: { name: "React and TypeScript", meta: "About 91 hours of course video (84 for React, 7.5 for TypeScript), the rest building and practice", skip: "The Supabase back-end sections, the Next.js sections of the React course, and the large final project" },
+      ar: { name: "React و TypeScript", meta: "نحو 91 ساعة من فيديو الدورتين (84 لـ React و7.5 لـ TypeScript)، والباقي بناء وتطبيق عملي", skip: "أقسام Supabase الخلفية، وأقسام Next.js داخل دورة React، والمشروع الختامي الكبير" } },
+    { id: 5, from: 13, to: 14,
+      en: { name: "Capstone project", meta: "No course. 80 hours of building, with a weekly check-in", skip: "" },
+      ar: { name: "المشروع الختامي", meta: "بدون دورة. 80 ساعة من البناء مع متابعة أسبوعية", skip: "" } }
+  ];
+
+  var WEEKS = [
+    { en: ["Git and GitHub", "Local Git (init, staging, commits, history), branching and merging, merge conflicts, pushing and pulling with GitHub, pull requests and code review, undoing mistakes (stash, amend, revert, reset)", "A GitHub account with a profile README, one repository with feature branches, a merged pull request, and a merge conflict resolved"],
+      ar: ["Git وGitHub", "Git محليًا (init والـ staging والـ commits والسجل)، التفرّع والدمج، تعارضات الدمج، الرفع والسحب مع GitHub، الـ pull requests ومراجعة الكود، التراجع عن الأخطاء (stash وamend وrevert وreset)", "حساب GitHub مع README للملف الشخصي، ومستودع واحد بفروع للميزات، وpull request مدموج، وتعارض دمج تم حلّه"] },
+    { en: ["HTML & CSS I", "Setup, HTML fundamentals, CSS fundamentals, Omnifood project: layout and components. Commit to a branch every day and open a pull request for each section", "The Omnifood header, hero and first sections built, each one merged through a pull request"],
+      ar: ["HTML و CSS (1)", "الإعداد، أساسيات HTML وCSS، مشروع Omnifood: التخطيط والمكوّنات. التزام يومي (commit) على فرع، وpull request لكل قسم", "بناء رأس صفحة Omnifood والقسم الرئيسي والأقسام الأولى، كل قسم مدموج عبر pull request"] },
+    { en: ["HTML & CSS II", "Flexbox, CSS Grid, responsive design, website optimization, deployment with GitHub Pages", "Omnifood finished, working on a phone screen, and deployed online from the repository"],
+      ar: ["HTML و CSS (2)", "Flexbox وCSS Grid والتصميم المتجاوب وتحسين الموقع والنشر عبر GitHub Pages", "مشروع Omnifood مكتمل ويعمل على الهاتف ومنشور على الإنترنت من المستودع"] },
+    { en: ["JavaScript fundamentals", "Fundamentals parts 1 and 2, developer skills and debugging, data structures, operators, strings", "All section exercises and challenges solved, plus a guess-the-number game"],
+      ar: ["أساسيات JavaScript", "الأساسيات الجزآن 1 و2، مهارات المطوّر وتصحيح الأخطاء، هياكل البيانات، العمليات، النصوص", "حل جميع تمارين وتحديات الأقسام، ولعبة تخمين الرقم"] },
+    { en: ["The DOM and functions", "DOM and events, how JavaScript works behind the scenes, functions in depth", "The modal window and Pig Game projects built and deployed"],
+      ar: ["DOM والدوال", "DOM والأحداث، كيف تعمل JavaScript من الداخل، الدوال بتعمّق", "مشروعا النافذة المنبثقة ولعبة Pig Game مبنيان ومنشوران"] },
+    { en: ["Arrays and the Bankist app", "Array methods (map, filter, reduce), the Bankist app, numbers, dates and timers, advanced DOM", "The Bankist app finished, with sorting, a transfer form and a timer"],
+      ar: ["المصفوفات وتطبيق Bankist", "دوال المصفوفات (map وfilter وreduce)، تطبيق Bankist، الأرقام والتواريخ والمؤقتات، DOM المتقدم", "تطبيق Bankist مكتمل مع الفرز ونموذج التحويل والمؤقت"] },
+    { en: ["OOP and asynchronous JavaScript", "Classes and prototypes, promises, fetch, async/await, error handling, modules", "A countries or weather app that loads data from a public API and handles errors"],
+      ar: ["البرمجة كائنية التوجه وJavaScript غير المتزامن", "الكلاسات والـ prototypes، Promises وfetch وasync/await ومعالجة الأخطاء، الـ modules", "تطبيق دول أو طقس يجلب البيانات من API عامة ويعالج الأخطاء"] },
+    { en: ["React basics", "React fundamentals, JSX, components and props, state and events, thinking in React", "Pizza menu, packing list and bill-splitting apps built"],
+      ar: ["أساسيات React", "أساسيات React وJSX، المكوّنات والـ props، الحالة والأحداث، التفكير بطريقة React", "بناء تطبيقات قائمة البيتزا وقائمة الحقيبة وتقسيم الفاتورة"] },
+    { en: ["Effects and custom hooks", "useEffect, data fetching, loading and error states, refs, custom hooks", "The movie search app (usePopcorn) built with a custom hook"],
+      ar: ["Effects والـ Hooks المخصصة", "useEffect وجلب البيانات وحالات التحميل والخطأ وrefs والـ hooks المخصصة", "تطبيق البحث عن الأفلام (usePopcorn) مع hook مخصص"] },
+    { en: ["Routing and shared state", "React Router, styling options, useReducer, Context API", "The WorldWise multi-page app with routes and context"],
+      ar: ["التوجيه والحالة المشتركة", "React Router وخيارات التنسيق وuseReducer وContext API", "تطبيق WorldWise متعدد الصفحات بالتوجيه والـ context"] },
+    { en: ["Redux, Tailwind and performance", "Redux and Redux Toolkit, Tailwind CSS crash course, performance optimization (memo, useMemo, useCallback)", "The Fast React Pizza app built with Redux and Tailwind"],
+      ar: ["Redux وTailwind والأداء", "Redux وRedux Toolkit، كراش كورس Tailwind CSS، تحسين الأداء (memo وuseMemo وuseCallback)", "تطبيق Fast React Pizza مبني بـ Redux وTailwind"] },
+    { en: ["TypeScript with React", "React & TypeScript - The Practical Guide: typing components and props, state and events, state management (Context and Redux), and side effects", "One earlier React app converted fully to TypeScript, plus the course projects"],
+      ar: ["TypeScript مع React", "دورة React & TypeScript - The Practical Guide: تحديد أنواع المكوّنات والـ props، الحالة والأحداث، إدارة الحالة (Context وRedux)، والـ side effects", "تحويل أحد تطبيقات React السابقة بالكامل إلى TypeScript، إضافة إلى مشاريع الدورة"] },
+    { en: ["Capstone: plan and build", "One-page plan, repository setup, core screens, API integration", "A written plan, a repository, and the core screens working with real data"],
+      ar: ["المشروع الختامي: التخطيط والبناء", "خطة من صفحة واحدة، إعداد المستودع، بناء الشاشات الأساسية، ربط الـ API", "خطة مكتوبة ومستودع جاهز والشاشات الأساسية تعمل ببيانات حقيقية"] },
+    { en: ["Capstone: finish and present", "Bug fixes, polish, README, deployment", "A deployed app with a README, shown to the mentor in a 30-minute walkthrough"],
+      ar: ["المشروع الختامي: الإنهاء والعرض", "إصلاح الأخطاء، التحسين، README، النشر", "تطبيق منشور مع README وعرض لمدة 30 دقيقة أمام المشرف"] }
+  ];
+
+  var UI = {
+    en: {
+      madeBy: "Created by",
+      eyebrow: "Learning path / 14 weeks / full-time",
+      h1: "Frontend trainee learning path",
+      sub: "14 weeks of full-time study, from Git and HTML to a deployed React app, using Udemy courses and one capstone project.",
+      stats: [["14", "weeks"], ["40", "hours a week"], ["560", "hours of study and practice"], ["203h 25m", "of course video (Udemy)"]],
+      rhythm: "Course video averages about 17 hours a week over weeks 1 to 12 (203 hours 25 minutes in total). The rest of each week is building and practice, plus 2 hours of code review and Q&A with the mentor. Weeks 13 and 14 are all building.",
+      week: "Week", weeks: "Weeks", phase: "Phase",
+      sections: "Study", deliverable: "Deliverable", skip: "Skip for now", course: "Course", done: "Done",
+      progress: function (n) { return n + " of 14 weeks done"; },
+      laterTitle: "After the 14 weeks",
+      later: [
+        ["Testing with Jest and React Testing Library", "pick a course later"],
+        ["Accessibility and web performance", "free material on web.dev"]
+      ],
+      capTitle: "Possible capstone projects",
+      capSkills: "Skills", capData: "Data",
+      caps: [
+        ["Mini storefront", "Product list with search and filters, a product page, a cart, and a checkout form with validation. Closest to real client work.", "Routing, Redux cart, forms, responsive layout, loading and error states", "DummyJSON or Fake Store API (free, no key)"],
+        ["Job application tracker", "Add, edit and move applications through stages (applied, interview, offer), with filters and notes. No API needed, so fewer delays.", "CRUD, forms, state design, TypeScript types, localStorage", "None, or a mock with json-server"]
+      ],
+      rulesTitle: "Ground rules",
+      rules: [
+        "Finish each phase before starting the next one.",
+        "Build the course projects and change something in each, instead of only watching.",
+        "Do not go back to skipped sections until the 14 weeks are over.",
+        "Do not start React until JavaScript projects can be built without a video."
+      ]
+    },
+    ar: {
+      madeBy: "أعدّه",
+      eyebrow: "مسار التعلّم / 14 أسبوعًا / دوام كامل",
+      h1: "مسار تعلّم متدرّب الواجهات الأمامية",
+      sub: "14 أسبوعًا من الدراسة بدوام كامل، من Git وHTML إلى تطبيق React منشور، باستخدام دورات Udemy ومشروع ختامي.",
+      stats: [["14", "أسبوعًا"], ["40", "ساعة أسبوعيًا"], ["560", "ساعة دراسة وتطبيق"], ["203", "ساعة و25 دقيقة من فيديو الدورات (Udemy)"]],
+      rhythm: "متوسط فيديو الدورات نحو 17 ساعة أسبوعيًا خلال الأسابيع من 1 إلى 12 (203 ساعة و25 دقيقة إجمالًا). الباقي من كل أسبوع بناء وتطبيق عملي، مع ساعتين لمراجعة الكود والأسئلة مع المشرف. الأسبوعان 13 و14 للبناء فقط.",
+      week: "الأسبوع", weeks: "الأسابيع", phase: "المرحلة",
+      sections: "المطلوب دراسته", deliverable: "المخرج المطلوب", skip: "يُتخطّى حاليًا", course: "الدورة", done: "تم",
+      progress: function (n) { return "تم إنجاز " + n + " من 14 أسبوعًا"; },
+      laterTitle: "بعد انتهاء الأسابيع الأربعة عشر",
+      later: [
+        ["الاختبارات باستخدام Jest وReact Testing Library", "تُختار دورتها لاحقًا"],
+        ["إمكانية الوصول وأداء الويب", "مواد مجانية على web.dev"]
+      ],
+      capTitle: "مشاريع ختامية مقترحة",
+      capSkills: "المهارات", capData: "البيانات",
+      caps: [
+        ["متجر مصغّر", "قائمة منتجات مع بحث وفلاتر، صفحة منتج، سلة مشتريات، ونموذج دفع مع التحقق من المدخلات. الأقرب لعمل العملاء الحقيقي.", "التوجيه، سلة بـ Redux، النماذج، التصميم المتجاوب، حالات التحميل والخطأ", "DummyJSON أو Fake Store API (مجانية بدون مفتاح)"],
+        ["متتبّع طلبات التوظيف", "إضافة الطلبات وتعديلها ونقلها بين المراحل (تقديم، مقابلة، عرض) مع الفلاتر والملاحظات. لا يحتاج API فتقل التأخيرات.", "عمليات CRUD، النماذج، تصميم الحالة، أنواع TypeScript، localStorage", "لا شيء، أو بيانات تجريبية عبر json-server"]
+      ],
+      rulesTitle: "قواعد أساسية",
+      rules: [
+        "إنهاء كل مرحلة قبل بدء التي تليها.",
+        "تنفيذ مشاريع الدورة مع تغيير شيء في كل مشروع، وعدم الاكتفاء بالمشاهدة.",
+        "عدم العودة إلى الأقسام المتخطّاة قبل انتهاء الأسابيع الأربعة عشر.",
+        "عدم بدء React قبل القدرة على بناء مشاريع JavaScript دون فيديو."
+      ]
+    }
+  };
+
+  var lang = "en";
+  var done = {};
+  try {
+    var saved = localStorage.getItem("fe-path-lang");
+    if (saved === "ar" || saved === "en") { lang = saved; }
+    else if ((navigator.language || "").slice(0, 2) === "ar") { lang = "ar"; }
+    done = JSON.parse(localStorage.getItem("fe-path-done-v4") || "{}") || {};
+  } catch (e) { done = {}; }
+
+  function save() {
+    try {
+      localStorage.setItem("fe-path-lang", lang);
+      localStorage.setItem("fe-path-done-v4", JSON.stringify(done));
+    } catch (e) {}
+  }
+
+  function countDone() {
+    var n = 0;
+    for (var i = 1; i <= 14; i++) { if (done[i]) n++; }
+    return n;
+  }
+
+  function weekHtml(i, t, phaseId) {
+    var w = WEEKS[i - 1][lang];
+    var isDone = !!done[i];
+    return '<li class="week' + (isDone ? ' is-done' : '') + '" id="week-' + i + '">' +
+      '<div class="wk">' +
+        '<div class="wk-head">' +
+          '<span class="wk-num">' + t.week + ' ' + (i < 10 ? '0' + i : i) + '</span>' +
+          '<h3>' + w[0] + '</h3>' +
+          '<label class="done"><input type="checkbox" data-week="' + i + '"' + (isDone ? ' checked' : '') + '> ' + t.done + '</label>' +
+        '</div>' +
+        '<div class="wk-body">' +
+          '<div><h4>' + t.sections + '</h4><p>' + w[1] + '</p></div>' +
+          '<div class="wk-deliver"><h4>' + t.deliverable + '</h4><p>' + w[2] + '</p></div>' +
+        '</div>' +
+      '</div></li>';
+  }
+
+  function phaseHtml(p, t) {
+    var d = p[lang];
+    var range = p.from === p.to ? p.from : p.from + '–' + p.to;
+    var links = (COURSES[p.id] || []).map(function (c) {
+      return '<a href="' + c.url + '" target="_blank" rel="noopener">' + c.name + '</a>';
+    }).join('<br>');
+    var meta = (links ? '<div><dt>' + (lang === 'ar' ? 'الدورات' : 'Courses') + '</dt><dd>' + links + '</dd></div>' : '') +
+      '<div><dt>' + (lang === 'ar' ? 'الوقت' : 'Time') + '</dt><dd>' + d.meta + '</dd></div>' +
+      (d.skip ? '<div><dt>' + t.skip + '</dt><dd>' + d.skip + '</dd></div>' : '');
+    var weeks = '';
+    for (var i = p.from; i <= p.to; i++) { weeks += weekHtml(i, t, p.id); }
+    return '<section class="phase" data-phase="' + p.id + '" aria-label="' + d.name + '">' +
+      '<div class="phase-head">' +
+        '<p class="phase-tag">' + t.phase + ' ' + p.id + ' / ' + (p.from === p.to ? t.week : t.weeks) + ' ' + range + '</p>' +
+        '<h2>' + d.name + '</h2>' +
+        '<dl class="phase-meta">' + meta + '</dl>' +
+      '</div>' +
+      '<ol class="weeks">' + weeks + '</ol>' +
+    '</section>';
+  }
+
+  function render() {
+    var t = UI[lang];
+    var root = document.documentElement;
+    root.lang = lang;
+    root.dir = lang === "ar" ? "rtl" : "ltr";
+    document.getElementById("eyebrow").textContent = t.eyebrow;
+    document.getElementById("btn-en").setAttribute("aria-pressed", lang === "en" ? "true" : "false");
+    document.getElementById("btn-ar").setAttribute("aria-pressed", lang === "ar" ? "true" : "false");
+
+    var stats = t.stats.map(function (s) { return '<div class="stat"><dd>' + s[0] + '</dd><dt>' + s[1] + '</dt></div>'; }).join("");
+    var n = countDone();
+    var html =
+      '<h1>' + t.h1 + '</h1>' +
+      '<p class="sub">' + t.sub + '</p>' +
+      '<dl class="stats">' + stats + '</dl>' +
+      '<p class="rhythm">' + t.rhythm + '</p>' +
+      '<div class="progress"><p id="progress-text">' + t.progress(n) + '</p><div class="track" role="progressbar" aria-valuemin="0" aria-valuemax="14" aria-valuenow="' + n + '"><div class="fill" id="fill" style="width:' + (n / 14 * 100) + '%"></div></div></div>' +
+      PHASES.map(function (p) { return phaseHtml(p, t); }).join("") +
+      '<div class="lists">' +
+        '<section class="later"><h2>' + t.laterTitle + '</h2><ol>' +
+          t.later.map(function (x) { return '<li>' + x[0] + ' <span>(' + x[1] + ')</span></li>'; }).join("") +
+        '</ol></section>' +
+        '<section class="rules"><h2>' + t.rulesTitle + '</h2><ul>' +
+          t.rules.map(function (x) { return '<li>' + x + '</li>'; }).join("") +
+        '</ul></section>' +
+      '</div>' +
+      '<section class="caps"><h2>' + t.capTitle + '</h2><ul>' +
+        t.caps.map(function (c) {
+          return '<li><h3>' + c[0] + '</h3><p>' + c[1] + '</p><dl>' +
+            '<div><dt>' + t.capSkills + '</dt><dd>' + c[2] + '</dd></div>' +
+            '<div><dt>' + t.capData + '</dt><dd>' + c[3] + '</dd></div></dl></li>';
+        }).join("") +
+      '</ul></section>';
+    document.getElementById("app").innerHTML = html;
+    document.getElementById("foot").innerHTML = '<p>' + t.madeBy + ' <strong>Ibrahim AlRayyan</strong> &middot; <a href="https://github.com/RayyanX95" target="_blank" rel="noopener">github.com/RayyanX95</a></p>';
+  }
+
+  document.querySelector(".lang").addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-lang]");
+    if (!b || b.getAttribute("data-lang") === lang) return;
+    lang = b.getAttribute("data-lang");
+    save();
+    render();
+    b.focus();
+  });
+
+  document.getElementById("app").addEventListener("change", function (e) {
+    var box = e.target;
+    if (!box.matches || !box.matches("input[data-week]")) return;
+    var i = box.getAttribute("data-week");
+    if (box.checked) { done[i] = true; } else { delete done[i]; }
+    save();
+    var li = document.getElementById("week-" + i);
+    if (li) li.classList.toggle("is-done", box.checked);
+    var n = countDone();
+    document.getElementById("progress-text").textContent = UI[lang].progress(n);
+    document.getElementById("fill").style.width = (n / 14 * 100) + "%";
+    document.querySelector(".track").setAttribute("aria-valuenow", n);
+  });
+
+  render();
+})();
+</script>
+
+</body></html>
